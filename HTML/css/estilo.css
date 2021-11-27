@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/*Font-Face é o parametro de utilização de fontes de letras disponiveis
+em arquivos, que podem ser baixados e adicionados, onde font-family é o nome
+da fonte e src url, é o caminho da pasta*/
+@font-face {
+    font-family: 'FonteLogo';
+    src: url("../fonts/computer-font.ttf");
+}
+
+
+/*-------------------------------------------------------------*/
+/*---------------------- Menu navegavel -----------------------*/
+
+/*Possibilita o bloco flutuar pela tela*/
+nav#menu {
+    display: block; 
+}
+
+/*No arquivo HTML, o valor H1 representa a Frase Menu*/
+nav#menu h1 {
+    display: none;
+}
+
+/*Formatação do MENU*/
+/*List Style = remove os marcadores sequenciais */
+/*Ajuste de posicionamento do menu*/
+nav#menu ul {
+	list-style: none;  
+    text-transform: uppercase;
+    position: absolute;
+    top: -17px;
+    left: 350px;
+}
+
+/* Transição de cores, quando rolado por cima do botão*/
+nav#menu li:hover{
+    background-color: #606060;  
+}
+
+/* Coloca os list-object em horizontal*/
+/* Tempo de Transição de cores do botão navegavel*/
+nav#menu li {
+	display: inline-block;   
+    background-color: grey;
+    padding: 7px;
+    margin: 2px;
+    transition: background-color 0.5s;
+}
+
+/*Coloração da letra (A = LINK) remoção do sublinhado*/
+nav#menu a{
+    color: aqua;
+    text-decoration: none;
+}
+
+/*Alteração de transição de cores da letra apenas do Link*/
+nav#menu a:hover{
+     color: white;
+     transition: 0.5s;
+ }
+
+/*-------------------------------------------------------------*/
+/*------------------------ Cabeçalho ---------------------------*/
+
+/*Dentro do Header que possui ID CABEÇALHO, temos
+o ITEM IMG que possui ID = A ICONE */
+header#cabecalho img#icone{
+    position: absolute;
+    left: 1000px;
+    top: 60px;
+}
+
+/*Criando borda de 1px cor cinza escuro com formato solid*/
+/*podem ser usados varios formatos, como pontilhado, ou tracejado*/
+/*A altura desse cabeçalho foi definido em 150*/
+/*A logo-marca, foi adicionado atraves do objeto URL*/
+/* O ../ significa que esta voltando uma pasta conforme a organizaçãqo dos diretorios*/
+/*O objeto do background preenche todo o espaço, sendo adicionado o parametro no-repeat, e ajustada sua posição posteriormente*/
+header#cabecalho {
+    border-bottom: 1px #606060 dotted;
+    height: 150px;
+    background: url("../imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+}
+
+header#cabecalho h1{
+    font-family: FonteLogo, sans-serif;
+    font-size: 30pt;
+    color: #606060;
+    padding: 0px;
+    margin-bottom: 0px; 
+    margin-left: 0px;  
+}
+
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif;
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;  
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+
+/*-------------------------------------------------------------*/
+/*------------------- Foramatação corpo site ------------------*/
+
+
+/*Definindo a cor de fundo do corpo*/
+/*Alterando a margem de mostragem do corpo*/
+/*A sequencia de margens é (TOP, RIGHT, BOTTOM, LEFT) */
+/*Sombra da margem Box-Shadow*/
+/*deslocamento lateral, deslocamento vertical, espalhamento da sombra, cor*/
+body {
+    background-color: grey;
+    font-family: Arial, sans-serif;
+    color: rgba(0,0,0,1);
+}
+
+div#interface {
+    background-color: #dddddd;
+    margin: -35px 25px -35px 25px;
+    box-shadow: 0px 0px 3px black;
+    padding: 10px;
+}
+
+/*Note que abaixo possui duas indicações de "TEXT DECORATION",
+um para impedir o auto sublinhado dos gerado pelos navegadores em LINKs
+e o segundo utilizando o parametro "hover", que faz a transição do objeto
+ai sim, quando interagido com este, ira sublinhar*/
+a {
+    text-decoration: none;
+    color: #606060;
+}
+
+a:hover{
+    text-decoration: underline;
+    transition: opacity 2s;
+}
+
+p {
+    text-justify: auto;
+    text-align: left;
+    text-indent: 10px;
+}
+
+/*Criando a divisão visual do site*/
+/*Com Display: Block, estamos pedindo para mostrar 
+este como um bloco visual de 600px, o mesmo é feito para 
+o bloco esquerdo*/
+/*Tambem Definido o Float, que permite fazer este objeto flutuar
+onde definimos que queremos ele na esquerda, e para o Aside na direita*/
+
+section#corpo{
+    display: block;
+    width: 800px;
+    float: left;
+    border-right: 1px dotted #606060;
+    padding-right: 15px;
+}
+
+aside#lateral{
+    display: block;
+    width: 460px;
+    float: right;
+    background-color: #cecece;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+aside#lateral h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2{
+    background-color: #606060;
+    font-size: 13pt;
+    color: aliceblue;
+    padding: 5px;
+}
+
+footer#rodape{
+    clear: both; /*Faz com que o trecho definido saia do bloco*/
+    border-top: 1px dotted;
+}
+
+footer#rodape p{
+    text-align: center;
+}
+
+/*Cabeçalho do artigo*/
+
+article#noticia-principal h2{
+    font-size: 12pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+
+}
+
+article#cab-art h1{
+    font-family: FonteLogo, sans-serif;
+    font-size: 30pt;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+article#cabecalho-artigo h2{
+    font-size: 13pt;
+    color: cecece;
+    margin: 0px;
+}
+
+article#cabecalho-artigo h3{
+    font-size: 12px;
+    color: #606060;
+}
+
+
+
+/*-------------------------------------------------------------*/
+/*------------------- Ajustes da tabela------------------------*/
+table#tabelaspec {
+    border: 1px solid #606060;
+    border-spacing: 0px;
+}
+
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Ajuste de Classes da tabela, ESQUERDA E DIREITA*/
+
+table#tabelaspec td.esquerda {
+    color: white;
+    background-color: #606060;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabelaspec td.direita {
+    background-color: #cecece;
+}
+
+/*Titulo da Tabela*/
+table#tabelaspec caption{
+    color: #888888;
+    font-size: 10px;
+    font-weight: bold; 
+}
+
+/*Configuração da tag <span>, ao qual reposiciona o conteudo da tag,
+ alem de poder alterar estilos*/
+
+ table#tabelaspec caption span{
+     display: block;
+     float: right;
+     font-size: 8pt;
+     color: black;
+     margin-top: 10px;
+ }
+
+/*-------------------------------------------------------------*/
+/*------------------- Ajustes Midias --------------------------*/
+
+figure.foto-legenda{
+    position: relative;
+    text-align: center;
+    border: 5px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+
+figure.foto-legenda img{
+	width: 100%;
+	height: 100%;
+}
+
+figure.foto-legenda figcaption {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0, 0,.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 2s;
+}
+
+figure.foto-legenda:hover figcaption{
+    opacity: 1;
+}
